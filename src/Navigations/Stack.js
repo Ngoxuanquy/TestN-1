@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, { useState, useEffect } from 'react'
+import { View, Text } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-import Home from '../Screens/Home';
-import Login from '../Screens/Login';
-import Tag from './Tab';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import Home from '../Screens/Home'
+import Login from '../Screens/Login'
+import Tag from './Tab'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
-
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator()
 
 function Stacks() {
-
     const URL_ON = 'http://192.168.0.106:4000'
     const URL1_ON = 'http://192.168.0.105:5000'
 
@@ -25,16 +23,13 @@ function Stacks() {
     const [token, setToken] = useState([])
     const [taikhoan, setTaiKhoan] = useState([])
     const [thongtin, setThongTin] = useState([])
-    const [reset, setReset] = useState(false);
+    const [reset, setReset] = useState(false)
     // AsyncStorage.getItem('token')
     //     .then(res =>
     //         setToken(res)
     //     )
 
-    AsyncStorage.getItem('taikhoan')
-        .then(res =>
-            setTaiKhoan(res)
-        )
+    AsyncStorage.getItem('taikhoan').then((res) => setTaiKhoan(res))
 
     // useEffect(() => {
     //     fetch(URL_CT + '/api/users/' + taikhoan)
@@ -57,16 +52,19 @@ function Stacks() {
 
     return (
         <NavigationContainer independent={true}>
-
             <Stack.Navigator>
                 {/* {token != "" ?
                     <> */}
-                <Stack.Screen name="Login" component={Login} options={{
+                {/* <Stack.Screen name="Login" component={Login} options={{
                     headerShown: false
-                }} />
-                <Stack.Screen name="Home" component={Tag} options={{
-                    headerShown: false
-                }} />
+                }} /> */}
+                <Stack.Screen
+                    name="Home"
+                    component={Tag}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
                 {/* </>
                     :
                     <Stack.Screen name="Login" component={Login} options={{
@@ -74,11 +72,8 @@ function Stacks() {
                     }} />
                 } */}
             </Stack.Navigator>
-
         </NavigationContainer>
-    );
+    )
 }
 
-
-
-export default Stacks;
+export default Stacks
