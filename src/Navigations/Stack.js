@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import Home from '../Screens/Home'
 import Login from '../Screens/Login'
-import Tag from './Tab'
+import Tab from './Tab'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const Stack = createNativeStackNavigator()
@@ -55,12 +55,16 @@ function Stacks() {
             <Stack.Navigator>
                 {/* {token != "" ?
                     <> */}
-                {/* <Stack.Screen name="Login" component={Login} options={{
-                    headerShown: false
-                }} /> */}
                 <Stack.Screen
-                    name="Home"
-                    component={Tag}
+                    name="Login"
+                    component={Login}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+                <Stack.Screen
+                    name="BottomTab"
+                    component={Tab}
                     options={{
                         headerShown: false,
                     }}

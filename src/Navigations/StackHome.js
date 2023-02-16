@@ -43,9 +43,30 @@ const Stack = createNativeStackNavigator()
 
 function StackHomes() {
     return (
-        <NavigationContainer independent={true}>
-            <Stack.Navigator
+        <Stack.Navigator
+            options={{
+                headerStyle: {
+                    backgroundColor: '#789BF6',
+                    height: 150,
+                    // title: 'My home',
+                    borderBottomLeftRadius: 40,
+                    borderBottomRightRadius: 40,
+                },
+                headerTintColor: '#fff',
+            }}
+        >
+            <Stack.Screen
+                name="Home"
+                component={Home}
                 options={{
+                    headerShown: false,
+                }}
+            />
+            <Stack.Screen
+                name="Đơn Hàng"
+                component={DonHang}
+                options={{
+                    headerShown: true,
                     headerStyle: {
                         backgroundColor: '#789BF6',
                         height: 150,
@@ -55,424 +76,401 @@ function StackHomes() {
                     },
                     headerTintColor: '#fff',
                 }}
-            >
-                <Stack.Screen
-                    name="Home"
-                    component={Home}
-                    options={{
-                        headerShown: false,
-                    }}
-                />
-                <Stack.Screen
-                    name="Đơn Hàng"
-                    component={DonHang}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="QRCode"
-                    component={QRCode}
-                    options={{
-                        headerShown: false,
-                    }}
-                />
-                <Stack.Screen
-                    name="DonDangThucHien"
-                    component={DonDangThucHien}
-                    options={{
-                        headerShown: true,
-                    }}
-                />
-                <Stack.Screen
-                    name="KhoHang"
-                    component={KhoHang}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Lịch Sử Đơn Hàng"
-                    component={LichSuDonHang}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Duyệt Chi"
-                    component={Chart}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Lương Thưởng"
-                    component={LuongThuong}
-                    options={{
-                        headerShown: false,
-                    }}
-                />
-                <Stack.Screen
-                    name="Thông Báo Công Ty"
-                    component={ThongBao}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Nhập-Xuất Kho"
-                    component={XuatNhapKho}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Phiếu Mượn Hàng"
-                    component={PhieuMuonHang}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Phiếu Xuất Kho"
-                    component={PhieuXuatKho}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Phiếu Đổi Hàng"
-                    component={PhieuDoiHang}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Phiếu Cấp Đồ"
-                    component={PhieuCapDo}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Phiếu Thu Hồi Đồ"
-                    component={PhieuThuDo}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
+            />
+            <Stack.Screen
+                name="QRCode"
+                component={QRCode}
+                options={{
+                    headerShown: false,
+                }}
+            />
+            <Stack.Screen
+                name="DonDangThucHien"
+                component={DonDangThucHien}
+                options={{
+                    headerShown: true,
+                }}
+            />
+            <Stack.Screen
+                name="KhoHang"
+                component={KhoHang}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Lịch Sử Đơn Hàng"
+                component={LichSuDonHang}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Duyệt Chi"
+                component={Chart}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Lương Thưởng"
+                component={LuongThuong}
+                options={{
+                    headerShown: false,
+                }}
+            />
+            <Stack.Screen
+                name="Thông Báo Công Ty"
+                component={ThongBao}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Nhập-Xuất Kho"
+                component={XuatNhapKho}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Phiếu Mượn Hàng"
+                component={PhieuMuonHang}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Phiếu Xuất Kho"
+                component={PhieuXuatKho}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Phiếu Đổi Hàng"
+                component={PhieuDoiHang}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Phiếu Cấp Đồ"
+                component={PhieuCapDo}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Phiếu Thu Hồi Đồ"
+                component={PhieuThuDo}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
 
-                <Stack.Screen
-                    name="Kho Hàng Cá Nhân"
-                    component={KhoHangCaNhan}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Phiếu Mượn"
-                    component={PhieuMuon}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="DonHang"
-                    component={Cart_Them}
-                    options={{
-                        headerShown: true,
-                    }}
-                />
-                <Stack.Screen
-                    name="Thủ Tục Hành Chính"
-                    component={ThuTucHanhChinh}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Chỉ Số Cá Nhân"
-                    component={ChiSoCaNhan}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Chi Tiết Đơn"
-                    component={SuaThanhToan}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Xác Nhận Chỉ Số"
-                    component={XacNhanChiSo}
-                    options={{
-                        headerShown: true,
-                    }}
-                />
-                <Stack.Screen
-                    name="Phiếu Phạt"
-                    component={PhieuPhat}
-                    options={{
-                        headerShown: true,
-                    }}
-                />
-                <Stack.Screen
-                    name="Phiếu Đề Nghị"
-                    component={PhieuDeNghi}
-                    options={{
-                        headerShown: true,
-                    }}
-                />
-                <Stack.Screen
-                    name="Phiếu Giải Trình"
-                    component={PhieuGiaiTrinh}
-                    options={{
-                        headerShown: true,
-                    }}
-                />
-                <Stack.Screen
-                    name="Đơn Xin Nghỉ Phép"
-                    component={DonXinNghiPhep}
-                    options={{
-                        headerShown: true,
-                    }}
-                />
-                <Stack.Screen
-                    name="Đơn Xin Nghỉ Việc"
-                    component={DonXinNghiViec}
-                    options={{
-                        headerShown: true,
-                    }}
-                />
-                <Stack.Screen
-                    name="Đơn Xin Đi Muộn"
-                    component={DonXinDiMuon}
-                    options={{
-                        headerShown: true,
-                    }}
-                />
-                <Stack.Screen
-                    name="Đơn Vệ Sinh"
-                    component={DonVeSinh}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Đơn thu nợ"
-                    component={DonThuNo}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="đơn khách nợ"
-                    component={DonKhachNo}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Đơn chờ thực hiện"
-                    component={DonChoThucHien}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Đơn Hoàn Thành"
-                    component={DonHoanThanh}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-                <Stack.Screen
-                    name="Đơn chưa bàn giao"
-                    component={DonChuaBanGiao}
-                    options={{
-                        headerShown: true,
-                        headerStyle: {
-                            backgroundColor: '#789BF6',
-                            height: 150,
-                            // title: 'My home',
-                            borderBottomLeftRadius: 40,
-                            borderBottomRightRadius: 40,
-                        },
-                        headerTintColor: '#fff',
-                    }}
-                />
-            </Stack.Navigator>
-        </NavigationContainer>
+            <Stack.Screen
+                name="Kho Hàng Cá Nhân"
+                component={KhoHangCaNhan}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Phiếu Mượn"
+                component={PhieuMuon}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="DonHang"
+                component={Cart_Them}
+                options={{
+                    headerShown: true,
+                }}
+            />
+            <Stack.Screen
+                name="Thủ Tục Hành Chính"
+                component={ThuTucHanhChinh}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Chỉ Số Cá Nhân"
+                component={ChiSoCaNhan}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Chi Tiết Đơn"
+                component={SuaThanhToan}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Xác Nhận Chỉ Số"
+                component={XacNhanChiSo}
+                options={{
+                    headerShown: true,
+                }}
+            />
+            <Stack.Screen
+                name="Phiếu Phạt"
+                component={PhieuPhat}
+                options={{
+                    headerShown: true,
+                }}
+            />
+            <Stack.Screen
+                name="Phiếu Đề Nghị"
+                component={PhieuDeNghi}
+                options={{
+                    headerShown: true,
+                }}
+            />
+            <Stack.Screen
+                name="Phiếu Giải Trình"
+                component={PhieuGiaiTrinh}
+                options={{
+                    headerShown: true,
+                }}
+            />
+            <Stack.Screen
+                name="Đơn Xin Nghỉ Phép"
+                component={DonXinNghiPhep}
+                options={{
+                    headerShown: true,
+                }}
+            />
+            <Stack.Screen
+                name="Đơn Xin Nghỉ Việc"
+                component={DonXinNghiViec}
+                options={{
+                    headerShown: true,
+                }}
+            />
+            <Stack.Screen
+                name="Đơn Xin Đi Muộn"
+                component={DonXinDiMuon}
+                options={{
+                    headerShown: true,
+                }}
+            />
+            <Stack.Screen
+                name="Đơn Vệ Sinh"
+                component={DonVeSinh}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Đơn thu nợ"
+                component={DonThuNo}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="đơn khách nợ"
+                component={DonKhachNo}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Đơn chờ thực hiện"
+                component={DonChoThucHien}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Đơn Hoàn Thành"
+                component={DonHoanThanh}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+            <Stack.Screen
+                name="Đơn chưa bàn giao"
+                component={DonChuaBanGiao}
+                options={{
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#789BF6',
+                        height: 150,
+                        // title: 'My home',
+                        borderBottomLeftRadius: 40,
+                        borderBottomRightRadius: 40,
+                    },
+                    headerTintColor: '#fff',
+                }}
+            />
+        </Stack.Navigator>
     )
 }
 
